@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi dan List Pendaftar</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="tabRegistrasi" data-toggle="tab" href="#registrasi">Registrasi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tabListPendaftar" data-toggle="tab" href="#listPendaftar">List Pendaftar</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="registrasi">
+                <form id="registrationForm" class="mt-4">
+                    <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <ul id="nama_input"></ul>
+                        <input type="text" class="form-control" id="nama" required>
+                    </div>
+                    <Script>
+                        let datanama = []
+                        function getDataInput() {
+                            const nama_input = document.getElementById("nama")
+                            console.log(nama_input.value)
+                            data.push(nama_input.value)
+                            console.log(datanama)
+
+                            const node = document.createElement("li")
+                            const value_li = document.createTextNode(nama_input.value)
+                            node.appendChild(value_li)
+                            document.getElementById("nama_input").appendChild(node)
+                        }
+                    </Script>
+                    <div class="form-group">
+                        <label for="umur">Umur:</label>
+                        <ul id="umur"></ul>
+                        <input type="number" class="form-control" id="umur" min="25" required >
+                    </div>
+                    <Script>
+                        let dataumur = []
+                        function getDataInput() {
+                            const umur_input = document.getElementById("umur")
+                            console.log(umur_input.value)
+                            data.push(umur_input.value)
+                            console.log(dataumur)
+
+                            const node = document.createElement("li")
+                            const value_li = document.createTextNode(umur_input.value)
+                            node.appendChild(value_li)
+                            document.getElementById("umur").appendChild(node)
+                        }
+                    </Script>
+                    <div class="form-group">
+                        <label for="uangSangu">Uang Sangu:</label>
+                        <ul id="uangSangu"></ul>
+                        <input type="number" class="form-control" id="uangSangu" min="100000" max="1000000" required>
+                    </div>
+                    <Script>
+                        let datauangSangu= []
+                        function getDataInput() {
+                            const umur_input = document.getElementById("uangSangu")
+                            console.log(umur_input.value)
+                            data.push(umur_input.value)
+                            console.log(datauangSangu)
+
+                            const node = document.createElement("li")
+                            const value_li = document.createTextNode(uangSangu_input.value)
+                            node.appendChild(value_li)
+                            document.getElementById("u").appendChild(node)
+                        }
+                    </Script>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="listPendaftar">
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Umur</th>
+                            <th>Uang Sangu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+                <p class="mt-3">Rata-rata pendaftar memiliki uang sangu sebesar <span id="averageUangSangu">0</span> dengan rata-rata umur <span id="averageUmur">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
